@@ -1,11 +1,12 @@
-import csv, string
-from bs4 import BeautifulSoup
+import csv
+import string
 
 import requests
+from bs4 import BeautifulSoup
 
 # GET THE LIST OF THE CATEGORIES RESULTS
 
-UPPER = string.ascii_uppercase[1:]
+UPPER = string.ascii_uppercase[2:]
 for upper in UPPER:
     listsCat = requests.get("http://www.localsearch.com.au/Categories/List_" + upper).content
     listsoup = BeautifulSoup(listsCat, 'html.parser')
